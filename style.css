@@ -1,0 +1,129 @@
+    :root {
+      /* ----- CORES ----- */
+      /* Cor primária e suas variações */
+      --color-primary: oklch(65% 0.24 260);
+      --color-primary-light: oklch(75% 0.18 260);
+      --color-primary-dark: oklch(50% 0.24 260);
+      
+      /* Cores de superfície (backgrounds) */
+      --color-surface: rgba(255, 255, 255, 0.8);
+      --color-surface-solid: #ffffff;
+      --color-surface-elevated: rgba(255, 255, 255, 0.95);
+      
+      /* Cores de texto */
+      --color-text-primary: oklch(25% 0.02 260);
+      --color-text-secondary: oklch(45% 0.02 260);
+      --color-text-muted: oklch(60% 0.01 260);
+      --color-text-on-primary: #ffffff;
+      
+      /* Cores de borda e divisores */
+      --color-border: rgba(0, 0, 0, 0.08);
+      --color-border-strong: rgba(0, 0, 0, 0.15);
+      
+      /* ----- ESPAÇAMENTOS ----- */
+      /* Sistema de 4px base - múltiplos consistentes */
+      --space-1: 0.25rem;   /* 4px */
+      --space-2: 0.5rem;    /* 8px */
+      --space-3: 0.75rem;   /* 12px */
+      --space-4: 1rem;      /* 16px */
+      --space-5: 1.25rem;   /* 20px */
+      --space-6: 1.5rem;    /* 24px */
+      --space-8: 2rem;      /* 32px */
+      
+      /* ----- TIPOGRAFIA ----- */
+      --font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-size-xs: 0.75rem;    /* 12px */
+      --font-size-sm: 0.875rem;   /* 14px */
+      --font-size-base: 1rem;     /* 16px */
+      --font-size-lg: 1.125rem;   /* 18px */
+      
+      --font-weight-normal: 400;
+      --font-weight-medium: 500;
+      --font-weight-semibold: 600;
+      --font-weight-bold: 700;
+      
+      /* ----- EFEITOS ----- */
+      /* Border radius consistente */
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --radius-full: 9999px;
+      
+      /* Sombras em camadas para profundidade realista */
+      --shadow-sm: 
+        0 1px 2px rgba(0, 0, 0, 0.04),
+        0 1px 3px rgba(0, 0, 0, 0.08);
+      --shadow-md: 
+        0 4px 6px rgba(0, 0, 0, 0.04),
+        0 2px 4px rgba(0, 0, 0, 0.06),
+        0 1px 2px rgba(0, 0, 0, 0.08);
+      --shadow-lg: 
+        0 10px 25px rgba(0, 0, 0, 0.06),
+        0 6px 12px rgba(0, 0, 0, 0.08),
+        0 2px 4px rgba(0, 0, 0, 0.1);
+      
+      /* Transições - duração e easing padronizados */
+      --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+      
+      /* Blur para efeito glassmorphism */
+      --blur-sm: 8px;
+      --blur-md: 12px;
+      --blur-lg: 20px;
+      
+      /* ----- DIMENSÕES DO MENU ----- */
+      --nav-height-desktop: 64px;
+      --nav-height-mobile: 72px;
+      
+      /* Safe area para dispositivos com notch/home indicator */
+      --safe-area-bottom: env(safe-area-inset-bottom, 0px);
+    }
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 100%;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  line-height: 1.6;
+  color: var(--color-text-primary);
+  background: var(--color-surface-solid);
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  padding-top: var(--nav-height-desktop);
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+
+  height: var(--nav-height-desktop);
+
+  background: var(--color-surface);
+  backdrop-filter: blur(var(--blur-lg));
+  -webkit-backdrop-filter: blur(var(--blur-lg));
+
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+
+  & header__container {
+    
+  }
+}
+
