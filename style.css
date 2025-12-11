@@ -133,5 +133,38 @@ body {
     justify-content: space-between;
     gap: var(--space-8);
   }
-}
 
+  & .header__logo {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+
+
+      font-size: var(--font-size-lg);
+      font-weight: var(--font-weight-bold);
+      color: var(--color-text-primary);
+
+      transition: opacity var(--transition-fast);
+
+      & .header__logo:hover {
+        opacity: 0.8;
+      }
+
+      & .logo-icon {
+      width: 32px;
+      height: 32px;
+      display: grid;
+      place-items: center;
+
+      background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+      color: var(--color-text-on-primary);
+      border-radius: var(--radius-md);
+
+      & svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+  }
+}
