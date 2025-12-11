@@ -177,4 +177,49 @@ body {
       display: none;
     }
   }
+
+  & .nav-link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+
+
+    padding: var(--space-2) var(--space-4);
+
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-secondary);
+
+    border-radius: var(--radius-md);
+
+    transition: 
+      color var(--transition-fast),
+      background-color var(--transition-fast);
+
+    & svg {
+      width: 18px;
+      height: 18px;
+      opacity: 0.7;
+      transition: opacity var(--transition-fast);
+    }
+
+    &:hover {
+      color: var(--color-text-primary);
+      background: var(--color-border);
+
+      & svg {
+        opacity: 1;
+      }
+    }
+
+    & .active {
+      color: var(--color-primary);
+      background: color-mix(in oklch, var(--color-primary) 10%, transparent);
+
+      & svg {
+        opacity: 1;
+      }
+    }
+  }
 }
