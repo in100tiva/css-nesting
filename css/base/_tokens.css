@@ -1,0 +1,42 @@
+:root {
+    --primary: #6366f1;
+    --primary-hover: #4f46e5;
+    --text: #1e293b;
+    --text-muted: #64748b;
+    --surface: rgba(255, 255, 255, 0.85);
+    --surface-solid: #f8fafc;
+    --border: rgba(0, 0, 0, 0.1);
+
+    --space-xs: 0.25rem;   /* 4px - espaços mínimos */
+    --space-sm: 0.5rem;    /* 8px - espaços pequenos */
+    --space-md: 1rem;      /* 16px - espaço padrão */
+    --space-lg: 1.5rem;    /* 24px - espaços maiores */
+
+    --font: system-ui, -apple-system, sans-serif;
+    --text-sm: 0.875rem;  /* 14px - texto pequeno */
+    --text-xs: 0.75rem;   /* 12px - legendas, labels */
+
+    --radius: 10px;
+    --radius-full: 9999px;  /* Para fazer círculos perfeitos */
+
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --blur: 20px;
+    --transition: 200ms ease;
+
+    --nav-height: 64px;
+    --nav-height-mobile: 70px;
+
+    --safe-area: env(safe-area-inset-bottom, 0px);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text: #f1f5f9;           /* Texto claro em fundo escuro */
+        --text-muted: #94a3b8;     /* Texto secundário mais claro */
+        --surface: rgba(15, 23, 42, 0.9);    /* Fundo escuro semi-transparente */
+        --surface-solid: #0f172a;            /* Fundo escuro sólido */
+        --border: rgba(255, 255, 255, 0.1);  /* Bordas claras em fundo escuro */
+            
+        --shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+}
