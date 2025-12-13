@@ -1,0 +1,21 @@
+@import url("base/_tokens.css");
+@import url("base/_reset.css");
+@import url("components/_header.css");
+@import url("components/_mobile-nav.css");
+
+
+:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+

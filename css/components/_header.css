@@ -1,0 +1,207 @@
+.header {
+    position: fixed;
+    inset: 0 0 auto 0;
+    z-index: 100;
+    height: var(--nav-height);
+
+    background: var(--surface);
+    backdrop-filter: blur(var(--blur));
+    -webkit-backdrop-filter: blur(var(--blur));
+
+    border-bottom: 1px solid var(--border);
+
+    & .header__inner {
+        max-width: 1100px;
+        height: 100%;
+        margin: 0 auto;
+        padding: 0 var(--space-lg);
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--space-lg);
+    }
+
+    & .logo {
+        display: flex;
+        align-items: center;
+        gap:  var(--space-sm);
+
+        font-weight: var(--font-weight-bold);
+        font-size: var(--text-lg);
+
+        transition: opacity var(--transition);
+
+        &:hover {
+            opacity: 0.7;
+        }
+
+        & .logo__icon {
+            width: 32px;
+            height: 32px;
+            display: grid;
+            place-items: center;
+
+            background: linear-gradient(135deg, var(--primary), var(--primary-hover));
+            color: white;
+            border-radius: var(--radius);
+
+            & svg {
+                width: 20px;
+                height: 20px;
+            }
+        } 
+    }
+    
+    & .nav {
+        display: flex;
+        align-items: center;
+        gap: var(--space-xs);
+
+        @media (width < 768px) {
+            display: none;
+        }
+    }
+
+    & .nav__link {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: var(--space-sm);
+
+        padding: var(--space-sm) var(--space-md);
+
+        font-size: var(--text-sm);
+        font-weight: var(--font-weight-medium);
+        color: var(--text-muted);
+
+        border-radius: var(--radius);
+
+        transition: all var(--transition);
+
+        & svg {
+            width: 18px;
+            height: 18px;
+            opacity: 0.6;
+            transition: opacity var(--transition);
+        }
+
+        &:hover {
+            color: var(--text);
+            background: var(--border);
+
+            & svg {
+                opacity: 1;
+            }
+        }
+
+        &.active {
+            color: var(--primary);
+
+            background: color-mix(in srgb, var(--primary) 12%, transparent);
+
+            & svg {
+                opacity: 1;
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+
+                bottom: 6px;
+                left: 50%;
+
+                transform: translateX(-50%);
+
+                width: 16px;
+                height: 2px;
+                background: var(--primary);
+
+                border-radius: var(--radius-full);
+            }
+        }
+    }
+
+    & .actions {
+        display: flex;
+        align-items: center;
+        gap: var(--space-sm);
+
+        @media (width < 768px) {
+            & .action:not(.action--avatar) {
+                display: none;
+            }
+        }
+    }
+
+    & .action {
+        position: relative;
+        width: 38px;
+        height: 38px;
+
+        display: grid;
+        place-items: center;
+        
+        color: var(--text-muted);
+        border-radius: var(--radius-full);
+        transition: all var(--transition);
+
+        & svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        &:hover {
+            color: var(--text);
+            background: var(--border);
+        }
+
+        &[data-count]::after {
+            content: attr(data-count);
+            position: absolute;
+            top: 4px;
+            right: 4px;
+
+            min-width: 16px;
+            height: 16px;
+            padding: 0 4px;
+
+            display: grid;
+            place-items: center;
+
+            font-size: 10px;
+            font-weight: var(--font-weight-black);
+
+            color: white;
+            background: rgb(220, 59, 59);
+            border-radius: var(--radius-full);
+
+            box-shadow: 0 0 0 2px var(--surface-solid);
+        }
+
+        &.action--avatar {
+            width: 36px;
+            height: 36px;
+            padding: 2px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-hover));
+            transition: transform var(--transition);
+  
+            & img {
+                width: 100%;
+                height: 100%;
+                border-radius: var(--radius-full);
+                object-fit: cover;
+                border: 2px solid var(--surface-solid);
+            }
+
+            &:hover {
+                transform: scale(1.08);
+                background: linear-gradient(90deg, var(--primary-hover), var(--primary));
+            }
+            
+        }
+
+    }
+
+}
+

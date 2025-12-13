@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu Responsivo</title>
+  <link rel="stylesheet" href="css/main.css">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+</head>
+<body>
+
+  <!-- Header Desktop -->
+  <header class="header">
+    <div class="header__inner">
+      
+      <a href="#" class="logo">
+        <span class="logo__icon">
+          <i data-lucide="hexagon"></i>
+        </span>
+        <span>Brand</span>
+      </a>
+
+      <nav class="nav">
+        <a href="#" class="nav__link active">
+          <i data-lucide="home"></i>
+          <span>Home</span>
+        </a>
+        <a href="#" class="nav__link">
+          <i data-lucide="compass"></i>
+          <span>Explore</span>
+        </a>
+        <a href="#" class="nav__link">
+          <i data-lucide="folder"></i>
+          <span>Projects</span>
+        </a>
+        <a href="#" class="nav__link">
+          <i data-lucide="bar-chart-3"></i>
+          <span>Analytics</span>
+        </a>
+      </nav>
+
+      <div class="actions">
+        <button class="action" aria-label="Search">
+          <i data-lucide="search"></i>
+        </button>
+        <button class="action" aria-label="Notifications" data-count="7">
+          <i data-lucide="bell"></i>
+        </button>
+        <button class="action action--avatar" aria-label="Profile">
+          <img src="https://i.pravatar.cc/80?img=12" alt="Avatar">
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Mobile Nav -->
+  <nav class="mobile-nav">
+    <div class="mobile-nav__inner">
+      
+      <a href="#" class="mobile-nav__item active">
+        <span class="icon"><i data-lucide="home"></i></span>
+        <span class="label">Home</span>
+      </a>
+      
+      <a href="#" class="mobile-nav__item">
+        <span class="icon"><i data-lucide="compass"></i></span>
+        <span class="label">Explore</span>
+      </a>
+      
+      <a href="#" class="mobile-nav__item mobile-nav__item--fab">
+        <span class="icon"><i data-lucide="plus"></i></span>
+        <span class="label">Create</span>
+      </a>
+      
+      <a href="#" class="mobile-nav__item">
+        <span class="icon" data-badge><i data-lucide="bell"></i></span>
+        <span class="label">Alerts</span>
+      </a>
+      
+      <a href="#" class="mobile-nav__item">
+        <span class="icon"><i data-lucide="user"></i></span>
+        <span class="label">Profile</span>
+      </a>
+
+    </div>
+  </nav>
+
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>
